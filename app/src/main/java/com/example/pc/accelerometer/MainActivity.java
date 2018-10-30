@@ -98,9 +98,11 @@ public class MainActivity extends Activity implements SensorEventListener {
         //convert radians into degrees
         pitch = pitch * (180.0/3.14);
         roll = roll * (180.0/3.14) ;
+        pitch= (double)Math.round(pitch * 10d) / 10;
+        roll= (double)Math.round(roll * 10d) / 10d;
 
-        yText.setText("Axis: " + String.valueOf(pitch));
-        zText.setText("Axis: " + String.valueOf(roll));
+        yText.setText("Axis: " + String.valueOf(pitch)+"\u00b0");
+        zText.setText("Axis: " + String.valueOf(roll)+"\u00b0");
 
 //        xText.setText("X: " + event.values[0]);
 //        yText.setText("Y: " + event.values[1]);
